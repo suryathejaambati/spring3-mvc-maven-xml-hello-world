@@ -26,7 +26,7 @@ pipeline{
                 }
                 stage('package the code'){
                     steps{
-                        sh "mvn packages"
+                        sh "mvn package"
                     }
                 }
                 stage('archive the artifactory'){
@@ -45,7 +45,7 @@ pipeline{
         always {
             step([$class: 'Mailer',
                 notifyEveryUnstableBuild: true,
-                recipients: "ybmadhuit@gmail.com,ybmadhu404@gmail.com",
+                recipients: "suryatheja.ambati@gmail.com,ambaticloud@gmail.com",
                 sendToIndividuals: true])
         }
     }
